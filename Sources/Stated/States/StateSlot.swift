@@ -9,9 +9,13 @@ public class ErasedStateSlot<StateForSlot>: Equatable, Hashable {
         return lhs.stateId == rhs.stateId
     }
 
-    public var hashValue: Int {
-        return stateId.hashValue
-    }
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(stateId.hashValue)
+	}
+
+//    public var hashValue: Int {
+//        return stateId.hashValue
+//    }
 
     public func _to<Arguments, StateTo>(_ to: StateSlot<Arguments, StateTo>, map: @escaping (StateForSlot) -> StateTo.MappedState) -> StateTransition<Arguments, StateForSlot, StateTo> {
         return StateTransition(from: self, to: to, map: map)

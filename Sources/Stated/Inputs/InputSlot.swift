@@ -32,9 +32,13 @@ public struct InputSlot<Arguments>: Equatable, Hashable, CustomDebugStringConver
         return lhs.uuid == rhs.uuid
     }
 
-    public var hashValue: Int {
-        return uuid.hashValue
-    }
+//    public var hashValue: Int {
+//        return uuid.hashValue
+//    }
+
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(uuid.hashValue)
+	}
 
     public var debugDescription: String {
         return friendlyName
