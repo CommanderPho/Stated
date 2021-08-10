@@ -208,6 +208,6 @@ Add Stated as a dependency to your `package.swift`
 
 ```
 dependencies: [
-    .Package(url: "https://github.com/jordanhamill/Stated.git", majorVersion: 1)
+    .Package(url: "https://github.com/CommanderPho/Stated.git", majorVersion: 1)
 ]
 ```
